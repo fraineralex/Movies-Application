@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link {{#if home}}active{{/if}}" aria-current="page" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{#if actionMovie}}active{{/if}}" aria-current="page" href="/action">Acción</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{#if horrorMovie}}active{{/if}}" aria-current="page" href="/horror">Terror</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{#if comedyMovie}}active{{/if}}" aria-current="page" href="/comedy">Comedia</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{#if suspenseMovie}}active{{/if}}" aria-current="page" href="/suspense">Suspenso</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link {{#if documentariesMovie}}active{{/if}}" aria-current="page" href="/documentaries">Documentales</a>
+            </li>
+            <li class="nav-item">
+              <a  href="/admin/add-movie" class="nav-link {{#if registerMovie}}active">Registrar{{else}}{{#if editMode}}active">Actualizar{{else}}">Registrar{{/if}}{{/if}} pelicula</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link {{#if adminMovie}}active{{/if}}" href="/admin/movies">Administrar peliculas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5 mb-5">
+
+        {{{body}}}
+
+      </div>
+    </div>
+    <script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

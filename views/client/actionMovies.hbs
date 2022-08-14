@@ -1,0 +1,38 @@
+<main>
+
+  {{#if hasMovies}}
+
+    <h1 class="text-center mb-5">Películas de Acción</h1>
+
+    <div class="row">
+      {{#each movies}}
+
+        {{#if (IsEqual this.gender "Accion")}}
+
+        <div class="col mb-4">
+        <div class="card border border-2 {{#if (IsEqual this.status "active")}}border-info{{else}}border-danger{{/if}}"style="width: 25rem; height: 30rem">
+            <img src="{{this.imageUrl}}" class="card-img-top" alt="{{this.title}}" />
+            <div class="card-body">
+              <h4 class="card-title text-center">{{this.title}} </h4>
+              <p class="card-text">
+                {{this.description}}
+              </p>
+              <p>
+                <strong>Generos:</strong>
+                {{this.gender}}
+              </p>
+              <h5 class="text-center text-{{#if (IsEqual this.status "active")}}info">Disponible{{else}}danger">Agotada{{/if}}</h5>
+            </div>
+          </div>
+        </div>
+        {{/if}}
+
+      {{/each}}
+    </div>
+  {{else}}
+
+    <h1>No hay películas de acción registradas</h1>
+
+  {{/if}}
+
+</main>
